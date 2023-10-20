@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 
 const UserList = ({ users }) => {
-  console.log("USERS FROM LIST :", users);
+  // console.log("USERS FROM LIST :", users);
 
   const renderedUsers = users.map((user) => {
     return (

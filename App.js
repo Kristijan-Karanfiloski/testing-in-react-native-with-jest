@@ -4,6 +4,9 @@ import Multiplier from "./components/Multiplier";
 import UserForm from "./components/UserForm";
 import { useState } from "react";
 import UserList from "./components/UserList";
+import ComponentWithData from "./components/ComponentWithData";
+import ButtonPressed from "./components/ButtonPressed";
+import FetchingDataComponent from "./components/FetchingDataComponent";
 
 export default function App() {
   const [users, setUsers] = useState([]);
@@ -13,18 +16,24 @@ export default function App() {
     console.log("USER FROM APP :", users);
   };
 
+  const handlePress = () => {
+    console.log("Button Pressed!");
+  };
+
   return (
     <View style={styles.wrapper}>
       {/*<Text>Open up App.js to start working on your app!</Text>*/}
-      <Multiplier />
+      {/*<Multiplier />*/}
       {/*<StatusBar style="auto" />*/}
 
       {/*<View style={styles.container}>*/}
-      <UserForm onAddUser={onAddUser} />
+      {/*<UserForm onAddUser={onAddUser} />*/}
       {/*<UserList users={users} />*/}
       {/*</View>*/}
-
-      <UserList users={users} />
+      {/*<ComponentWithData />*/}
+      <FetchingDataComponent />
+      {/*<UserList users={users} />*/}
+      {/*<ButtonPressed handlePress={handlePress} />*/}
     </View>
   );
 }
