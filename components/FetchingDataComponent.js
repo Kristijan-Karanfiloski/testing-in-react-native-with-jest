@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 
 const FetchingDataComponent = () => {
   const [todo, setTodo] = useState([]);
-  export const fetchData = async () => {
+  const fetchData = async () => {
     const response = await fetch("https://api.sampleapis.com/coffee/hot");
     const data = await response.json();
+
+    // console.log("FIRST ITEM OF THE TODO :", data[1].title);
     setTodo(data);
   };
 
@@ -30,21 +32,27 @@ const FetchingDataComponent = () => {
 
   useEffect(() => {
     fetchData().then((r) => {
-      console.log(r);
+      // console.log(r);
     });
   }, []);
 
-  console.log("DATA TODO :", todo);
+  // console.log("DATA TODO :", todo);
 
   return (
     <View style={styles.container}>
-      <FlatList data={todo} renderItem={renderItem} />
-      {todo.map((item) => (
-        <View>
-          <Text>{item.title}</Text>
-          <Text>{item.title === "Latte" ? item.description : ""}</Text>
-        </View>
-      ))}
+      {/*<FlatList data={todo} renderItem={renderItem} />*/}
+      {/*{todo.map((item) => (*/}
+      {/*  <View>*/}
+      {/*    <Text>{item.title}</Text>*/}
+      {/*    <Text>{item.title === "Latte" ? item.description : ""}</Text>*/}
+      {/*  </View>*/}
+      {/*))}*/}
+
+      {todo.length > 0 ? (
+        <Text>{todo[0].title}</Text>
+      ) : (
+        <Text>No coffee found</Text>
+      )}
     </View>
   );
 };
