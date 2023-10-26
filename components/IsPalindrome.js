@@ -15,6 +15,7 @@ const IsPalindrome = () => {
   return (
     <View style={styles.container}>
       <Button title="check if palindrome" onPress={checkIfPalindrome} />
+      <Button title="Submit" />
       <Text>Fuck</Text>
     </View>
   );

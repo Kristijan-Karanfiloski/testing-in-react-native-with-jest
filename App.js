@@ -1,16 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import Multiplier from "./components/Multiplier";
-import UserForm from "./components/UserForm";
+import { StyleSheet, View } from "react-native";
 import { useState } from "react";
-// import UserList from "./components/UserList";
-import ComponentWithData from "./components/ComponentWithData";
-import ButtonPressed from "./components/ButtonPressed";
-import FetchingDataComponent from "./components/FetchingDataComponent";
-import Product from "./components/Product";
-import Customer from "./components/Customer";
-import Counter from "./components/Counter";
-import IsPalindrome from "./components/IsPalindrome";
+import AddTodo from "./components/AddTodo";
 
 export default function App() {
   const [users, setUsers] = useState([]);
@@ -36,10 +26,11 @@ export default function App() {
       {/*</View>*/}
       {/*<Product />*/}
       {/*<Customer />*/}
-      <ComponentWithData />
-      <FetchingDataComponent />
-      <Counter />
-      <IsPalindrome />
+      <AddTodo />
+      {/*<ComponentWithData />*/}
+      {/*<FetchingDataComponent />*/}
+      {/*<Counter />*/}
+      {/*<IsPalindrome />*/}
       {/*<UserList users={users} />*/}
       {/*<ButtonPressed handlePress={handlePress} />*/}
     </View>
