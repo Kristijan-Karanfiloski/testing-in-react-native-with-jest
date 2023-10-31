@@ -1,6 +1,9 @@
 import { StyleSheet, View } from "react-native";
 import { useState } from "react";
 import AddTodo from "./components/AddTodo";
+import RoleExample from "./components/RoleExample";
+import Appointment from "./components/Appointment";
+import DownloadOnTheAppStoreButton from "./components/DownloadOnTheAppStoreButton";
 
 export default function App() {
   const [users, setUsers] = useState([]);
@@ -19,14 +22,17 @@ export default function App() {
       {/*<Text>Open up App.js to start working on your app!</Text>*/}
       {/*<Multiplier />*/}
       {/*<StatusBar style="auto" />*/}
-
+      <DownloadOnTheAppStoreButton />
       {/*<View style={styles.container}>*/}
       {/*<UserForm onAddUser={onAddUser} />*/}
       {/*<UserList users={users} />*/}
       {/*</View>*/}
       {/*<Product />*/}
       {/*<Customer />*/}
-      <AddTodo />
+      {/*<AddTodo />*/}
+
+      {/*<RoleExample />*/}
+      {/*<Appointment />*/}
       {/*<ComponentWithData />*/}
       {/*<FetchingDataComponent />*/}
       {/*<Counter />*/}

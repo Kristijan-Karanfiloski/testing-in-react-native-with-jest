@@ -4,6 +4,8 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Button,
+  Pressable,
 } from "react-native";
 import { useState } from "react";
 
@@ -40,6 +42,60 @@ const AddTodo = () => {
 
   const [addNewTodoItemTitle, setAddNewTodoItemTitle] = useState("");
   const [addNewTodoDueDate, setAddNewTodoDueDate] = useState("");
+  const [errorMessage, setErrorMessage] = useState();
+
+  // function greet(message) {
+  //   function sayHello() {
+  //     return `Hello ${message}`;
+  //   }
+  //
+  //   return sayHello();
+  // }
+  //
+  // console.log(greet("fucking kiko"));
+
+  // const addSumOfTwoNumbers = (a, b) => {
+  //   console.log("RESULT :", a + b);
+  // };
+  //
+  // const a = 23;
+  // const c = 32;
+  //
+  // addSumOfTwoNumbers(a, 23);
+
+  //! THIS IS IF I WANT TO USE THE FUNCTION AS A HELLPER
+  const deleteTodoItem = (id) => {
+    return (kiko) => {
+      console.log(
+        "TODO ITEM FROM THE FUNCTION DELETE TODO ITEM FUNCTION :",
+        kiko
+      );
+      return kiko.id !== id;
+    };
+  };
+
+  // const onPressDeleteTodoItem = (id) => {
+  //   setTodoItem(todoItem.filter(deleteTodoItem(id)));
+  // };
+  const onPressDeleteTodoItem = (id) => {
+    console.log("ID FROM THE OUTER FUNCTION :", id);
+    // setTodoItem(todoItem.filter(deleteTodoItem(id)));
+    setTodoItem(
+      todoItem.filter((item) => {
+        console.log("ITEM  FROM INNER FUNCTION :", item);
+        console.log("ITEM . ID FROM INNER FUNCTION :", item.id);
+        console.log("ID FROM INNER FUNCTION :", id);
+
+        return item.id !== id;
+      })
+    );
+  };
+
+  // const words = ["spr", "elite"];
+  //
+  // const removeWord = words.filter((word) => word.length > 3);
+
+  // console.log("FILTER WORDS :", removeWord);
 
   // const newTodoItem = [
   //   [
@@ -49,13 +105,24 @@ const AddTodo = () => {
   // ];
 
   // console.log("ADDED ITEM TO THE ARRAY :", newTodoItem);
-  console.log("THE TODO ITEMS ARRAY :", todoItem);
+  // console.log("THE TODO ITEMS ARRAY :", todoItem);
 
   const onPressAddTodoItem = () => {
+    if (addNewTodoItemTitle === "") {
+      console.log("Cant be empty");
+      return;
+    }
+
     setTodoItem([
       ...todoItem,
-      { id: 6, title: addNewTodoItemTitle, dueDate: addNewTodoDueDate },
+      {
+        id: todoItem.length + 1,
+        title: addNewTodoItemTitle,
+        dueDate: addNewTodoDueDate,
+      },
     ]);
+    setAddNewTodoItemTitle("");
+    setAddNewTodoDueDate("");
     // setTodoItem();
   };
 
@@ -76,6 +143,7 @@ const AddTodo = () => {
           />
           <Text>{addNewTodoItemTitle}</Text>
           <Text>{addNewTodoDueDate}</Text>
+          {!setAddNewTodoItemTitle && <Text>Cant be empty</Text>}
           <TouchableOpacity style={styles.button} onPress={onPressAddTodoItem}>
             <Text>Add new todo</Text>
           </TouchableOpacity>
@@ -95,6 +163,10 @@ const AddTodo = () => {
                     {` ${item.title},${item.dueDate} : ${
                       item.completed === true ? "done" : "to be done"
                     }`}
+                    {/*<Button title="delete" onPress={onPressDeleteTodoItem} />*/}
+                    <Pressable onPress={() => onPressDeleteTodoItem(item.id)}>
+                      <Text>Delete</Text>
+                    </Pressable>
                   </li>
                 </ul>
               );
