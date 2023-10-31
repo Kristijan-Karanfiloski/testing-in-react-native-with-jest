@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1698740065100" clover="3.2.0">
-  <project timestamp="1698740065100" name="All files">
-    <metrics statements="48" coveredstatements="16" conditionals="6" coveredconditionals="0" methods="15" coveredmethods="4" elements="69" coveredelements="20" complexity="0" loc="48" ncloc="48" packages="4" files="6" classes="6"/>
+<coverage generated="1698745951837" clover="3.2.0">
+  <project timestamp="1698745951837" name="All files">
+    <metrics statements="44" coveredstatements="13" conditionals="6" coveredconditionals="0" methods="13" coveredmethods="3" elements="63" coveredelements="16" complexity="0" loc="44" ncloc="44" packages="4" files="5" classes="5"/>
     <package name="TestingProject">
-      <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.js" path="C:\Users\Asus\Desktop\TestingProject\App.js">
-        <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
       </file>
     </package>
     <package name="TestingProject.components">
-      <metrics statements="35" coveredstatements="10" conditionals="6" coveredconditionals="0" methods="10" coveredmethods="2"/>
+      <metrics statements="31" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="9" coveredmethods="1"/>
       <file name="AddTodo.js" path="C:\Users\Asus\Desktop\TestingProject\components\AddTodo.js">
         <metrics statements="27" coveredstatements="2" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0"/>
-        <line num="12" count="2" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
@@ -46,38 +40,37 @@
         <line num="129" count="0" type="stmt"/>
         <line num="156" count="0" type="stmt"/>
         <line num="167" count="0" type="stmt"/>
-        <line num="183" count="2" type="stmt"/>
+        <line num="183" count="1" type="stmt"/>
       </file>
       <file name="Appointment.js" path="C:\Users\Asus\Desktop\TestingProject\components\Appointment.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="2" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
       </file>
-      <file name="RoleExample.js" path="C:\Users\Asus\Desktop\TestingProject\components\RoleExample.js">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
+    </package>
+    <package name="TestingProject.components.downloadOnTheAppStoreButton">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="DownloadOnTheAppStoreButton.js" path="C:\Users\Asus\Desktop\TestingProject\components\downloadOnTheAppStoreButton\DownloadOnTheAppStoreButton.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
       </file>
     </package>
     <package name="TestingProject.components.helperFunctions">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="styleQueries.js" path="C:\Users\Asus\Desktop\TestingProject\components\helperFunctions\styleQueries.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="TestingProject.components.hooks">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="useStyleQueries.js" path="C:\Users\Asus\Desktop\TestingProject\components\hooks\useStyleQueries.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
+      <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="testingFunctions.js" path="C:\Users\Asus\Desktop\TestingProject\components\helperFunctions\testingFunctions.js">
+        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
       </file>
     </package>
   </project>

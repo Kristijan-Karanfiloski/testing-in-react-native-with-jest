@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,9 +122,7 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,18 +130,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,23 +182,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { StyleSheet, View } from "react-native";
-import { useState } from "react";
-import AddTodo from "./components/AddTodo";
-import RoleExample from "./components/RoleExample";
-import Appointment from "./components/Appointment";
-import DownloadOnTheAppStoreButton from "./components/DownloadOnTheAppStoreButton";
+import TestingFunctions from "./components/helperFunctions/testingFunctions";
+import DownloadOnTheAppStoreButton from "./components/downloadOnTheAppStoreButton/DownloadOnTheAppStoreButton";
 &nbsp;
 export default function <span class="fstat-no" title="function not covered" >App(</span>) {
-  const [users, setUsers] = <span class="cstat-no" title="statement not covered" >useState([]);</span>
+  // const [users, setUsers] = useState([]);
 &nbsp;
-  const onAddUser = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(u</span>ser) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setUsers([...users, user]);</span>
-<span class="cstat-no" title="statement not covered" >    console.log("USER FROM APP :", users);</span>
-  };
-&nbsp;
-  const handlePress = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    console.log("Button Pressed!");</span>
-  };
+  // const onAddUser = (user) =&gt; {
+  //   setUsers([...users, user]);
+  //   console.log("USER FROM APP :", users);
+  // };
+  //
+  // const handlePress = () =&gt; {
+  //   console.log("Button Pressed!");
+  // };
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;View style={styles.wrapper}&gt;
@@ -210,6 +203,7 @@ export default function <span class="fstat-no" title="function not covered" >App
       {/*&lt;Multiplier /&gt;*/}
       {/*&lt;StatusBar style="auto" /&gt;*/}
       &lt;DownloadOnTheAppStoreButton /&gt;
+      &lt;TestingFunctions /&gt;
       {/*&lt;View style={styles.container}&gt;*/}
       {/*&lt;UserForm onAddUser={onAddUser} /&gt;*/}
       {/*&lt;UserList users={users} /&gt;*/}
@@ -242,7 +236,7 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow",
     alignItems: "center",
     justifyContent: "center",
-    border: "7px solid blue",
+&nbsp;
     // height: "50vh",
   },
 });
@@ -253,7 +247,7 @@ const styles = StyleSheet.create({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-31T08:14:25.082Z
+                at 2023-10-31T09:52:31.819Z
             </div>
         <script src="../prettify.js"></script>
         <script>

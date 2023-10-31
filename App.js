@@ -1,21 +1,18 @@
 import { StyleSheet, View } from "react-native";
-import { useState } from "react";
-import AddTodo from "./components/AddTodo";
-import RoleExample from "./components/RoleExample";
-import Appointment from "./components/Appointment";
-import DownloadOnTheAppStoreButton from "./components/DownloadOnTheAppStoreButton";
+import TestingFunctions from "./components/helperFunctions/testingFunctions";
+import DownloadOnTheAppStoreButton from "./components/downloadOnTheAppStoreButton/DownloadOnTheAppStoreButton";
 
 export default function App() {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
-  const onAddUser = (user) => {
-    setUsers([...users, user]);
-    console.log("USER FROM APP :", users);
-  };
-
-  const handlePress = () => {
-    console.log("Button Pressed!");
-  };
+  // const onAddUser = (user) => {
+  //   setUsers([...users, user]);
+  //   console.log("USER FROM APP :", users);
+  // };
+  //
+  // const handlePress = () => {
+  //   console.log("Button Pressed!");
+  // };
 
   return (
     <View style={styles.wrapper}>
@@ -23,6 +20,7 @@ export default function App() {
       {/*<Multiplier />*/}
       {/*<StatusBar style="auto" />*/}
       <DownloadOnTheAppStoreButton />
+      <TestingFunctions />
       {/*<View style={styles.container}>*/}
       {/*<UserForm onAddUser={onAddUser} />*/}
       {/*<UserList users={users} />*/}
@@ -55,7 +53,7 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow",
     alignItems: "center",
     justifyContent: "center",
-    border: "7px solid blue",
+
     // height: "50vh",
   },
 });
