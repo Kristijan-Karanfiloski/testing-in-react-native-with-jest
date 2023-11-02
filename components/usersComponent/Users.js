@@ -25,7 +25,7 @@ const Users = () => {
       });
   }, []);
 
-  console.log(error, typeof error);
+  console.log(error);
 
   // const renderItem = users.map((user) => user.name);
 
@@ -43,7 +43,7 @@ const Users = () => {
   return (
     <>
       <View style={styles.container}>
-        <Text>Users :</Text>
+        <Text testID="title-text">Users</Text>
         {error && <Text>{error}</Text>}
         {/*{users.map((user) => {*/}
         {/*  // console.log("USER ", user);*/}
@@ -51,6 +51,7 @@ const Users = () => {
         {/*})}*/}
 
         <FlatList
+          testID="flat-list"
           data={users}
           renderItem={renderItem}
           keyExtractor={(users) => users.id}
