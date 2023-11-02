@@ -1,6 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import TestingFunctions from "./components/helperFunctions/testingFunctions";
-import DownloadOnTheAppStoreButton from "./components/downloadOnTheAppStoreButton/DownloadOnTheAppStoreButton";
+import Users from "./components/usersComponent/Users";
 
 export default function App() {
   // const [users, setUsers] = useState([]);
@@ -15,45 +14,22 @@ export default function App() {
   // };
 
   return (
-    <View style={styles.wrapper}>
-      {/*<Text>Open up App.js to start working on your app!</Text>*/}
-      {/*<Multiplier />*/}
-      {/*<StatusBar style="auto" />*/}
-      <DownloadOnTheAppStoreButton />
-      <TestingFunctions />
-      {/*<View style={styles.container}>*/}
-      {/*<UserForm onAddUser={onAddUser} />*/}
-      {/*<UserList users={users} />*/}
-      {/*</View>*/}
-      {/*<Product />*/}
-      {/*<Customer />*/}
-      {/*<AddTodo />*/}
-
-      {/*<RoleExample />*/}
-      {/*<Appointment />*/}
-      {/*<ComponentWithData />*/}
-      {/*<FetchingDataComponent />*/}
-      {/*<Counter />*/}
-      {/*<IsPalindrome />*/}
-      {/*<UserList users={users} />*/}
-      {/*<ButtonPressed handlePress={handlePress} />*/}
-    </View>
+    <>
+      <View style={styles.wrapper}>
+        <Users />
+      </View>
+      ;
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   wrapper: {
-    display: "flex",
-    flexDirection: "column",
     flex: 1,
-  },
-  container: {
-    // flex: 1,
-    // backgroundColor: '#fff',
-    backgroundColor: "yellow",
-    alignItems: "center",
     justifyContent: "center",
-
-    // height: "50vh",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "yellow",
+    padding: 10,
   },
 });

@@ -8,11 +8,11 @@ const product = {
   price: "$50",
 };
 
-const quantity = product.quantity;
+// const quantity = product.quantity;
 
 // console.log("Quantity: :", quantity);
 
-const transformToAString = quantity.toString();
+// const transformToAString = quantity.toString();
 
 // console.log("TransformToAString :", transformToAString);
 // console.log(typeof transformToAString);
