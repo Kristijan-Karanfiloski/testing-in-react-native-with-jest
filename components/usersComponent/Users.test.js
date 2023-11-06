@@ -1,5 +1,6 @@
 import { act, render, screen, waitFor } from "@testing-library/react-native";
 import Users from "./Users";
+import renderer from "react-test-renderer";
 
 describe("Users", () => {
   it("renders correctly", () => {
@@ -44,6 +45,25 @@ describe("Users", () => {
 
     expect(userText).toHaveTextContent("Users");
     expect(userText).toHaveTextContent(/Users/);
-    // expect(userText).not.toHaveTextContent("User");
   });
+
+  it("checking for the styles ", () => {
+    const { getByTestId } = render(<Users />);
+
+    const userText = getByTestId("title-text");
+
+    expect(userText).toHaveStyle({ color: "black" });
+  });
+});
+
+describe("Users", () => {
+  it("should be visible", () => {
+    const { getByTestId } = render(<Users />);
+
+    const userText = getByTestId("title-text");
+
+    expect(userText).not.toBeVisible();
+  });
+
+  renderer.create();
 });

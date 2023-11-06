@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import Users from "./components/usersComponent/Users";
+import RegisterForm from "./components/registerForm/RegisterForm";
 
 export default function App() {
   // const [users, setUsers] = useState([]);
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <>
       <View style={styles.wrapper}>
-        <Users />
+        <RegisterForm />
       </View>
       ;
     </>
@@ -26,9 +26,9 @@ export default function App() {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
+    // justifyContent: "center",
+    // alignItems: "center",
+    // flexDirection: "column",
     backgroundColor: "yellow",
     padding: 10,
   },

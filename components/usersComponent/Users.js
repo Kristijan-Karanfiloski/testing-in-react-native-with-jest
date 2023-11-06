@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import { Text, View, StyleSheet, FlatList, Modal } from "react-native";
 import { useEffect, useState } from "react";
 
 const Users = () => {
@@ -25,7 +25,7 @@ const Users = () => {
       });
   }, []);
 
-  console.log(error);
+  // console.log(error);
 
   // const renderItem = users.map((user) => user.name);
 
@@ -43,7 +43,9 @@ const Users = () => {
   return (
     <>
       <View style={styles.container}>
-        <Text testID="title-text">Users</Text>
+        <Text style={{ color: "black", opacity: 0 }} testID="title-text">
+          Users
+        </Text>
         {error && <Text>{error}</Text>}
         {/*{users.map((user) => {*/}
         {/*  // console.log("USER ", user);*/}
@@ -70,6 +72,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: "black",
     padding: 10,
+    // opacity: 0,
   },
   item: {
     borderWidth: 1,
