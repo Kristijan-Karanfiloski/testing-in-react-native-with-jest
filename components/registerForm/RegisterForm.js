@@ -7,63 +7,134 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
 
   // useEffect(() => {
   //   console.log(typeof setIsSignIn);
-  // });
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-    repeatPassword: "",
-  });
+  // }, [isSignIn]);
 
-  const [emailErrorText, setEmailErrorText] = useState("");
-  const [passwordErrorText, setPasswordErrorText] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+  // console.log("IsSignIn FROM REGISTER FORM", isSignIn);
+
+  const [formValues, setFormValues] = useState({
+    username: "",
+    password: "",
+    // username: "atuny0",
+    // password: "9uQFF1Lh",
+    // repeatPassword: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  // const [emailErrorText, setEmailErrorText] = useState("");
+  // const [passwordErrorText, setPasswordErrorText] = useState("");
+  // const [repeatPassword, setRepeatPassword] = useState("");
 
   const handleFormValueChanges = (key, value) => {
     setFormValues({ ...formValues, [key]: value });
   };
 
-  const checkIfEmailIsValid = (formValues) => {
-    if (formValues.email !== "" && formValues.email.includes("@")) {
-      // setErrorText("You ve entered a valid email");
-      // console.log("Please enter a valid email");
-      setEmailErrorText("");
-      // console.log("You ve entered a valid email");
-    } else {
-      setEmailErrorText("Please enter a valid email");
-    }
-  };
-  const checkIfPasswordIsValid = (formValues) => {
-    if (formValues.password.length < 7) {
-      // console.log("Please enter a valid email");
-      // setErrorText("Please enter a valid password");
-      setPasswordErrorText("Please enter a valid password");
-    } else {
-      setPasswordErrorText("");
-    }
-  };
+  // const checkIfEmailIsValid = (formValues) => {
+  //   if (formValues.email !== "" && formValues.email.includes("@")) {
+  //     // setErrorText("You ve entered a valid email");
+  //     // console.log("Please enter a valid email");
+  //     setEmailErrorText("");
+  //     // console.log("You ve entered a valid email");
+  //   } else {
+  //     setEmailErrorText("Please enter a valid email");
+  //   }
+  // };
+  // const checkIfPasswordIsValid = (formValues) => {
+  //   if (formValues.password.length < 7) {
+  //     // console.log("Please enter a valid email");
+  //     // setErrorText("Please enter a valid password");
+  //     setPasswordErrorText("Please enter a valid password");
+  //   } else {
+  //     setPasswordErrorText("");
+  //   }
+  // };
+  //
+  // const checkIfPasswordsMatch = (formValues) => {
+  //   if (
+  //     formValues.password &&
+  //     formValues.repeatPassword &&
+  //     formValues.password === formValues.repeatPassword
+  //   ) {
+  //     setRepeatPassword("");
+  //   } else if (!formValues.password || !formValues.repeatPassword) {
+  //     setRepeatPassword("Passwords do not match");
+  //   } else {
+  //     setRepeatPassword("Passwords do not match");
+  //   }
+  // };
 
-  const checkIfPasswordsMatch = (formValues) => {
-    if (
-      formValues.password &&
-      formValues.repeatPassword &&
-      formValues.password === formValues.repeatPassword
-    ) {
-      setRepeatPassword("");
-    } else if (!formValues.password || !formValues.repeatPassword) {
-      setRepeatPassword("Passwords do not match");
-    } else {
-      setRepeatPassword("Passwords do not match");
+  //VALIDATE FORM
+
+  useEffect(() => {
+    validateForm();
+  }, [formValues.username, formValues.password]);
+
+  const validateForm = () => {
+    let errorsMsg = {};
+
+    if (!formValues.username) {
+      errorsMsg.username = "Please enter a valid username";
+    } else if (formValues.username.length < 6) {
+      errorsMsg.username = "Username must be at least 6 characters";
     }
+    // else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
+    //   errorsMsg.email = "Email is invalid";
+    // }
+
+    ////////////////////////////////////////////////
+    if (!formValues.password) {
+      errorsMsg.password = "Password is required";
+    } else if (formValues.password.length < 7) {
+      errorsMsg.password = "Password must be at least 6 characters";
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////
+
+    // if (!formValues.repeatPassword) {
+    //   errorsMsg.repeatPassword = "";
+    // } else if (formValues.password !== formValues.repeatPassword) {
+    //   errorsMsg.repeatPassword = "Password dosent match";
+    // }
+
+    setErrors(errorsMsg);
+    setIsFormValid(Object.keys(errorsMsg).length === 0);
   };
 
   const handleSubmit = () => {
-    const isEmailValid = checkIfEmailIsValid(formValues);
-    const isPasswordValid = checkIfPasswordIsValid(formValues);
-    const doPasswordsMatch = checkIfPasswordsMatch(formValues);
+    // console.log("ERRORS", errors);
+
+    // validateForm();
+    // const isEmailValid = checkIfEmailIsValid(formValues);
+    // const isPasswordValid = checkIfPasswordIsValid(formValues);
+    // const doPasswordsMatch = checkIfPasswordsMatch(formValues);
     // Only proceed with the state change if all validations pass
-    if (isEmailValid && isPasswordValid && doPasswordsMatch) {
-      console.log("SUCCESS");
-      setIsSignIn(!isSignIn);
+    // if (isEmailValid && isPasswordValid && doPasswordsMatch) {
+    //   console.log("SUCCESS");
+    //   setIsSignIn(!isSignIn);
+    // }
+
+    if (isFormValid) {
+      fetch("https://dummyjson.com/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: formValues.username,
+          password: formValues.password,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response data
+          console.log(data);
+          console.log("User registered successfully", data);
+          setIsSignIn(!isSignIn); // You might want to navigate the user or change state
+        })
+        .catch((error) => {
+          // Handle any errors during fetch
+          console.error("There was an error registering the user!", error);
+        });
+    } else {
+      console.log("Form has errors");
     }
   };
 
@@ -72,16 +143,17 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
       <View testID="register-screen" style={styles.container}>
         <Text>Register form</Text>
         <View style={styles.form}>
-          <Text>Enter email</Text>
+          <Text>Enter username</Text>
           <TextInput
-            testID="email-input"
+            testID="username-input"
+            accessibilityRole="text"
             style={styles.input}
-            value={formValues.email}
-            onChangeText={(value) => handleFormValueChanges("email", value)}
+            value={formValues.username}
+            onChangeText={(value) => handleFormValueChanges("username", value)}
           />
-          <Text testID="email-error-text" style={styles.errorText}>
-            {emailErrorText}
-          </Text>
+          {/*<Text testID="email-error-text" style={styles.errorText}>*/}
+          {/*  {emailErrorText}*/}
+          {/*</Text>*/}
           <Text>{formValues.email}</Text>
           <Text>Enter password</Text>
           <TextInput
@@ -90,17 +162,22 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
             value={formValues.password}
             onChangeText={(value) => handleFormValueChanges("password", value)}
           />
-          <Text style={styles.errorText}>{passwordErrorText}</Text>
-          <Text>Repeat password</Text>
-          <TextInput
-            testID="repeat-password-input"
-            style={styles.input}
-            value={formValues.repeatPassword}
-            onChangeText={(value) =>
-              handleFormValueChanges("repeatPassword", value)
-            }
-          />
-          <Text style={styles.errorText}>{repeatPassword}</Text>
+          {/*<Text style={styles.errorText}>{passwordErrorText}</Text>*/}
+          {/*<Text>Repeat password</Text>*/}
+          {/*<TextInput*/}
+          {/*  testID="repeat-password-input"*/}
+          {/*  style={styles.input}*/}
+          {/*  value={formValues.repeatPassword}*/}
+          {/*  onChangeText={(value) =>*/}
+          {/*    handleFormValueChanges("repeatPassword", value)*/}
+          {/*  }*/}
+          {/*/>*/}
+          {/*<Text style={styles.errorText}>{repeatPassword}</Text>*/}
+          {Object.values(errors).map((error, index) => (
+            <Text testID="error-text" style={styles.errorText} key={index}>
+              {error}
+            </Text>
+          ))}
           <Button
             testID="btn"
             title="Press me"

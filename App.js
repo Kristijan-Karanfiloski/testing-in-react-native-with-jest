@@ -39,10 +39,12 @@ export default function App() {
 
   const [isSignIn, setIsSignIn] = useState(true);
 
-  useEffect(() => {
-    console.log("isSignIn updated to:", isSignIn);
-    console.log(typeof setIsSignIn);
-  }, [isSignIn]);
+  // console.log("ISSIGNIN FROM APP :", isSignIn);
+
+  // useEffect(() => {
+  //   console.log("isSignIn updated to:", isSignIn);
+  //   console.log(typeof setIsSignIn);
+  // }, [isSignIn]);
 
   return (
     <>
