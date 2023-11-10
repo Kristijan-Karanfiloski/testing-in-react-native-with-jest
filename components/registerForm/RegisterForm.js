@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TextInput, View, Button } from "react-native";
 import { useEffect, useState } from "react";
-// import { useNavigation } from "@react-navigation/native";
+
 
 const RegisterForm = ({ setIsSignIn, isSignIn }) => {
   // const { isSignIn, setIsSignIn } = route.params;
@@ -84,8 +84,8 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
     ////////////////////////////////////////////////
     if (!formValues.password) {
       errorsMsg.password = "Password is required";
-    } else if (formValues.password.length < 7) {
-      errorsMsg.password = "Password must be at least 6 characters";
+    } else if (formValues.password.length < 8) {
+      errorsMsg.password = "Password must be at least 8 characters";
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -183,6 +183,7 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
             title="Press me"
             // onPress={() => console.log("Simple Button pressed")}
             onPress={() => handleSubmit()}
+            style={styles.submit}
           />
         </View>
       </View>
@@ -219,4 +220,7 @@ const styles = StyleSheet.create({
   errorText: {
     color: "red",
   },
+  submit:{
+    backgroundColor:'red'
+  }
 });

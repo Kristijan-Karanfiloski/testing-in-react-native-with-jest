@@ -48,7 +48,7 @@ describe("RegisterScreen", () => {
       <RegisterForm setIsSignIn={setIsSignInMock} isSignIn={false} />
     );
 
-    const usernameInput = getByRole("textbox");
+    const usernameInput = getByTestId("username-input");
 
     fireEvent.changeText(getByTestId("username-input"), "atuny0");
     fireEvent.changeText(getByTestId("password-input"), "9uQFF1Lh");
