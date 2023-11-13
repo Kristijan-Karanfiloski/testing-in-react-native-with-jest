@@ -1,9 +1,7 @@
 import { StyleSheet, View } from "react-native";
-import RegisterForm from "./components/registerForm/RegisterForm";
-import Home from "./components/registerForm/Home";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Login from "./components/login/Login";
 
 const Stack = createNativeStackNavigator();
 
@@ -48,41 +46,24 @@ export default function App() {
 
   return (
     <>
-      <NavigationContainer>
-        {/*<Stack.Navigator>*/}
-        {/*  {isSignIn ? (*/}
-        {/*    <Stack.Screen name="RegisterScreen">*/}
-        {/*      {(props) => (*/}
-        {/*        <RegisterForm*/}
-        {/*          {...props}*/}
-        {/*          isSignIn={isSignIn}*/}
-        {/*          setIsSignIn={setIsSignIn}*/}
-        {/*        />*/}
-        {/*      )}*/}
-        {/*    </Stack.Screen>*/}
-        {/*  ) : (*/}
-        {/*    // <Stack.Screen*/}
-        {/*    //   name="RegisterScreen"*/}
-        {/*    //   component={RegisterForm}*/}
-        {/*    //   initialParams={{ isSignIn: isSignIn, setIsSignIn: setIsSignIn }}*/}
-        {/*    // />*/}
-        {/*    <Stack.Screen name="HomeScreen" component={Home} />*/}
-        {/*  )}*/}
-        {/*</Stack.Navigator>*/}
-        {isSignIn ? (
-          <Stack.Navigator>
-            <Stack.Screen name="Form">
-              {() => (
-                <RegisterForm setIsSignIn={setIsSignIn} isSignIn={isSignIn} />
-              )}
-            </Stack.Screen>
-          </Stack.Navigator>
-        ) : (
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} />
-          </Stack.Navigator>
-        )}
-      </NavigationContainer>
+      {/*<NavigationContainer>*/}
+      {/*  {isSignIn ? (*/}
+      {/*    <Stack.Navigator>*/}
+      {/*      <Stack.Screen name="Form">*/}
+      {/*        {() => (*/}
+      {/*          <RegisterForm setIsSignIn={setIsSignIn} isSignIn={isSignIn} />*/}
+      {/*        )}*/}
+      {/*      </Stack.Screen>*/}
+      {/*    </Stack.Navigator>*/}
+      {/*  ) : (*/}
+      {/*    <Stack.Navigator>*/}
+      {/*      <Stack.Screen name="Home" component={Home} />*/}
+      {/*    </Stack.Navigator>*/}
+      {/*  )}*/}
+      {/*</NavigationContainer>*/}
+      <View style={styles.wrapper}>
+        <Login />
+      </View>
       {/*<RegisterForm />*/}
       {/*<Home />*/}
     </>
@@ -90,14 +71,14 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  // wrapper: {
-  //   flex: 1,
-  //   borderWidth: 4,
-  //   borderColor: "blue",
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   // flexDirection: "column",
-  //   backgroundColor: "yellow",
-  //   padding: 10,
-  // },
+  wrapper: {
+    flex: 1,
+    borderWidth: 4,
+    borderColor: "blue",
+    justifyContent: "center",
+    alignItems: "center",
+    // flexDirection: "column",
+    // backgroundColor: "yellow",
+    padding: 10,
+  },
 });

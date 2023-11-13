@@ -27,40 +27,6 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
     setFormValues({ ...formValues, [key]: value });
   };
 
-  // const checkIfEmailIsValid = (formValues) => {
-  //   if (formValues.email !== "" && formValues.email.includes("@")) {
-  //     // setErrorText("You ve entered a valid email");
-  //     // console.log("Please enter a valid email");
-  //     setEmailErrorText("");
-  //     // console.log("You ve entered a valid email");
-  //   } else {
-  //     setEmailErrorText("Please enter a valid email");
-  //   }
-  // };
-  // const checkIfPasswordIsValid = (formValues) => {
-  //   if (formValues.password.length < 7) {
-  //     // console.log("Please enter a valid email");
-  //     // setErrorText("Please enter a valid password");
-  //     setPasswordErrorText("Please enter a valid password");
-  //   } else {
-  //     setPasswordErrorText("");
-  //   }
-  // };
-  //
-  // const checkIfPasswordsMatch = (formValues) => {
-  //   if (
-  //     formValues.password &&
-  //     formValues.repeatPassword &&
-  //     formValues.password === formValues.repeatPassword
-  //   ) {
-  //     setRepeatPassword("");
-  //   } else if (!formValues.password || !formValues.repeatPassword) {
-  //     setRepeatPassword("Passwords do not match");
-  //   } else {
-  //     setRepeatPassword("Passwords do not match");
-  //   }
-  // };
-
   //VALIDATE FORM
 
   useEffect(() => {
@@ -99,18 +65,6 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
   };
 
   const handleSubmit = () => {
-    // console.log("ERRORS", errors);
-
-    // validateForm();
-    // const isEmailValid = checkIfEmailIsValid(formValues);
-    // const isPasswordValid = checkIfPasswordIsValid(formValues);
-    // const doPasswordsMatch = checkIfPasswordsMatch(formValues);
-    // Only proceed with the state change if all validations pass
-    // if (isEmailValid && isPasswordValid && doPasswordsMatch) {
-    //   console.log("SUCCESS");
-    //   setIsSignIn(!isSignIn);
-    // }
-
     if (isFormValid) {
       fetch("https://dummyjson.com/auth/login", {
         method: "POST",
