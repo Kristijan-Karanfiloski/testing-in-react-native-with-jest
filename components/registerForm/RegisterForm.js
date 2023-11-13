@@ -1,6 +1,5 @@
-import { StyleSheet, Text, TextInput, View, Button } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { useEffect, useState } from "react";
-
 
 const RegisterForm = ({ setIsSignIn, isSignIn }) => {
   // const { isSignIn, setIsSignIn } = route.params;
@@ -20,7 +19,6 @@ const RegisterForm = ({ setIsSignIn, isSignIn }) => {
   });
   const [errors, setErrors] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
-
   // const [emailErrorText, setEmailErrorText] = useState("");
   // const [passwordErrorText, setPasswordErrorText] = useState("");
   // const [repeatPassword, setRepeatPassword] = useState("");
@@ -220,7 +218,7 @@ const styles = StyleSheet.create({
   errorText: {
     color: "red",
   },
-  submit:{
-    backgroundColor:'red'
-  }
+  submit: {
+    backgroundColor: "red",
+  },
 });
