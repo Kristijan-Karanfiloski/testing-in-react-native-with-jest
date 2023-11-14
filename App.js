@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     borderWidth: 4,
-    borderColor: "blue",
+    // borderColor: "blue",
     justifyContent: "center",
     alignItems: "center",
     // flexDirection: "column",

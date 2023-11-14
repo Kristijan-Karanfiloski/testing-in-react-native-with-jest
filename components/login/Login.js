@@ -20,7 +20,7 @@ const Login = () => {
     if (!username) {
       error = "Please enter a username";
     } else if (username.length < 4) {
-      error = "Needs to be 4 character or more";
+      error = "Needs to be 4 characters or more";
     }
 
     setErrorText(error);
@@ -64,7 +64,7 @@ const Login = () => {
         <View>
           {errorText && <Text style={{ color: "red" }}>{errorText}</Text>}
         </View>
-        <Button title="Press me" onPress={onPressShowParagraph} />
+        <Button title="Press" onPress={onPressShowParagraph} />
         {showParagraph && <Text>Hello there !!</Text>}
       </View>
     </>
