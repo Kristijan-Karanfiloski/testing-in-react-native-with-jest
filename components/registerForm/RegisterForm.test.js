@@ -219,7 +219,7 @@ describe("RegisterScreen", () => {
 });
 // import API from "../../components/__mocks__/fetch";
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
 // const mockSetIsSignIn = jest.fn();
 

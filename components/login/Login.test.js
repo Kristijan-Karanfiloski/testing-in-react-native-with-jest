@@ -1,8 +1,8 @@
-import { fireEvent, render } from "@testing-library/react-native";
+import { fireEvent, render, screen } from "@testing-library/react-native";
 import Login from "./Login";
 
 describe("Login", () => {
-  const add = (a, b) => a + b;
+  // const add = (a, b) => a + b;
 
   // if (add(1, 2) !== 4) {
   //   throw new Error("Expected 3 to be 4");
@@ -10,6 +10,8 @@ describe("Login", () => {
   it("get the text input username", () => {
     const { getByPlaceholderText } = render(<Login />);
     const usernameInput = getByPlaceholderText("username");
+
+    // userEvent.type(usernameInput, "kristijan");
     // expect();
   });
 
@@ -33,5 +35,29 @@ describe("Login", () => {
     const errorMessage = getByText(/needs to be 4 characters or more/i);
 
     expect(errorMessage).toBeVisible();
+  });
+
+  it("the button should be disabled on render", () => {
+    const wrapper = render(<Login />);
+
+    console.log(wrapper.debug());
+
+    // const disabledButton = screen.getByText(/disable/i);
+    //THIS IS THE BETTER WAY TO ACCESS A BUTTON
+    const disabledButton = screen.getByRole("button", { name: /disabled/i });
+
+    expect(disabledButton).toBeDisabled();
+  });
+
+  it("after clicking the button press should display the text Hello there", () => {
+    render(<Login />);
+
+    const inputUsername = screen.getByRole("text");
+
+    fireEvent.changeText(inputUsername, "kiko");
+
+    fireEvent.press(screen.getByRole("button", { name: /press/i }));
+
+    expect(screen.getByText(/hello there/i)).toBeVisible();
   });
 });

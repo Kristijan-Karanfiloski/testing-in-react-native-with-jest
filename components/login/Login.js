@@ -58,6 +58,7 @@ const Login = () => {
             placeholder="username"
             value={username}
             onChangeText={handleInputTextChange}
+            accessibilityRole="text"
           />
         </View>
         {/*<Text>{username}</Text>*/}
@@ -66,6 +67,7 @@ const Login = () => {
         </View>
         <Button title="Press" onPress={onPressShowParagraph} />
         {showParagraph && <Text>Hello there !!</Text>}
+        <Button disabled title="Disabled" />
       </View>
     </>
   );
