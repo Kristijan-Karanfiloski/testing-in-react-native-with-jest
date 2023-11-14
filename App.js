@@ -1,7 +1,8 @@
-import { StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
 import Login from "./components/login/Login";
+import ChuckNorrisJoke from "./components/chuckNorrisJoke/ChuckNorrisJoke";
 
 const Stack = createNativeStackNavigator();
 
@@ -61,9 +62,9 @@ export default function App() {
       {/*    </Stack.Navigator>*/}
       {/*  )}*/}
       {/*</NavigationContainer>*/}
-      <View style={styles.wrapper}>
-        <Login />
-      </View>
+      <SafeAreaView style={styles.wrapper}>
+        <ChuckNorrisJoke />
+      </SafeAreaView>
       {/*<RegisterForm />*/}
       {/*<Home />*/}
     </>
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 4,
     // borderColor: "blue",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
     // flexDirection: "column",
     // backgroundColor: "yellow",
