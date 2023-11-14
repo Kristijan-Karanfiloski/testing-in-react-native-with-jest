@@ -13,19 +13,22 @@ const ChuckNorrisJoke = () => {
   };
 
   const handleOnClickNewJoke = () => {
-    fetchJoke();
+    fetchJoke().catch((error) => {
+      console.error("Error in the hendleOnClcikNewJoke", error);
+    });
   };
 
   return (
     <>
       <View style={styles.container}>
         <Image style={styles.img} source={ChuckPng} />
+        <Text style={styles.title}>Get your daily Chuck Norris Joke</Text>
         <Pressable style={styles.button} onPress={handleOnClickNewJoke}>
-          <Text>Roll</Text>
+          <Text>Joke Roll</Text>
         </Pressable>
 
         <View style={styles.phraseContainer}>
-          <Text>{joke.value}</Text>
+          <Text style={styles.jokeText}>{joke.value}</Text>
         </View>
       </View>
     </>
@@ -42,16 +45,27 @@ const styles = StyleSheet.create({
     height: 150,
     width: 250,
   },
+  title: {
+    fontSize: 15,
+    marginTop: 20,
+    fontWeight: "bold",
+  },
   button: {
     width: 100,
-    backgroundColor: "red",
+    backgroundColor: "lightblue",
     alignItems: "center",
-    marginTop: 15,
+    marginTop: 20,
     padding: 5,
     borderRadius: 7,
     cursor: "pointer",
   },
   phraseContainer: {
-    padding: 7,
+    marginTop: 15,
+    padding: 10,
+    // borderWidth: 2,
+    // borderColor: "green",
+  },
+  jokeText: {
+    fontSize: 15,
   },
 });
