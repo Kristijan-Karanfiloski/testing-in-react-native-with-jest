@@ -12,11 +12,13 @@ const ChuckNorrisJoke = () => {
     const data = await response.json();
     console.log(data);
     setJoke(data);
+    return data;
   };
 
   const handleOnClickNewJoke = () => {
     fetchJoke().catch((error) => {
       console.error("Error in the handleOnClickNewJoke", error);
+      // throw new Error("API error");
     });
   };
 
@@ -45,6 +47,7 @@ const ChuckNorrisJoke = () => {
 
   useEffect(() => {
     checkIfHeCanDrink(age, kiko);
+    calcAge(1993);
   }, []);
 
   // console.log("DATA AFTER CLICKING THE BUTTON :", joke);
@@ -59,6 +62,12 @@ const ChuckNorrisJoke = () => {
   // };
   //
   // arrowFunction("FUCK", "YOU");
+
+  function calcAge(birthYear) {
+    console.log(firstName);
+  }
+
+  const firstName = "Kristijan";
 
   return (
     <>
