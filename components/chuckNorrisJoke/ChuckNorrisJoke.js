@@ -1,9 +1,11 @@
 import { Image, View, StyleSheet, Pressable, Text } from "react-native";
 import ChuckPng from "../../assets/chucknorris_logo_coloured_small.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ChuckNorrisJoke = () => {
   const [joke, setJoke] = useState("");
+
+  // console.log("DATA BEFORE CLICKING THE BUTTON :", joke);
 
   const fetchJoke = async () => {
     const response = await fetch("https://api.chucknorris.io/jokes/random");
@@ -14,9 +16,49 @@ const ChuckNorrisJoke = () => {
 
   const handleOnClickNewJoke = () => {
     fetchJoke().catch((error) => {
-      console.error("Error in the hendleOnClcikNewJoke", error);
+      console.error("Error in the handleOnClickNewJoke", error);
     });
   };
+
+  const age = 21;
+  const kiko = {
+    age: 22,
+  };
+
+  const [output, setOutput] = useState("");
+
+  const checkIfHeCanDrink = (legalAge, person) => {
+    // let legalAgeToDrink = 21;
+
+    let outputMessage = "";
+
+    if (person.age < legalAge) {
+      console.log("He cant drink");
+      outputMessage = "He is Retarted";
+    } else {
+      console.log("You can drink motherfucker");
+      outputMessage = "He is disabled";
+    }
+
+    setOutput(outputMessage);
+  };
+
+  useEffect(() => {
+    checkIfHeCanDrink(age, kiko);
+  }, []);
+
+  // console.log("DATA AFTER CLICKING THE BUTTON :", joke);
+  // function exampleFunction() {
+  //   console.log(arguments[0]);
+  // }
+  //
+  // exampleFunction("Hello", "Worlds");
+  //
+  // const arrowFunction = (...args) => {
+  //   console.log(args[0]);
+  // };
+  //
+  // arrowFunction("FUCK", "YOU");
 
   return (
     <>
