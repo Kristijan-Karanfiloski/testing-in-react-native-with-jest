@@ -44,8 +44,6 @@ const ChuckNorrisJoke = () => {
           <Text style={styles.jokeText}>{joke.value}</Text>
         </View>
         <View>
-          {/*<CallbackFunctions />*/}
-          {/*<FunctionReturningFunction />*/}
           <ClosureInFunctions />
         </View>
       </View>
