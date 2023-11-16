@@ -1,73 +1,35 @@
 import { Image, View, StyleSheet, Pressable, Text } from "react-native";
 import ChuckPng from "../../assets/chucknorris_logo_coloured_small.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import CallbackFunctions from "../testing-functions/CallbackFunctions";
+import FunctionReturningFunction from "../testing-functions/FunctionReturningFunction";
+import ClosureInFunctions from "../testing-functions/ClosureInFunctions";
+
+export const fetchJoke = async () => {
+  try {
+    const response = await fetch("https://api.chucknorris.io/jokes/random");
+    const data = await response.json();
+    console.log(data);
+
+    return data;
+  } catch (e) {
+    return undefined;
+  }
+};
 
 const ChuckNorrisJoke = () => {
   const [joke, setJoke] = useState("");
 
   // console.log("DATA BEFORE CLICKING THE BUTTON :", joke);
 
-  const fetchJoke = async () => {
-    const response = await fetch("https://api.chucknorris.io/jokes/random");
-    const data = await response.json();
-    console.log(data);
+  const handleOnClickNewJoke = async () => {
+    const data = await fetchJoke();
     setJoke(data);
-    return data;
+    // fetchJoke().catch((error) => {
+    //   console.error("Error in the handleOnClickNewJoke", error);
+    //   // throw new Error("API error");
+    // });
   };
-
-  const handleOnClickNewJoke = () => {
-    fetchJoke().catch((error) => {
-      console.error("Error in the handleOnClickNewJoke", error);
-      // throw new Error("API error");
-    });
-  };
-
-  const age = 21;
-  const kiko = {
-    age: 22,
-  };
-
-  const [output, setOutput] = useState("");
-
-  const checkIfHeCanDrink = (legalAge, person) => {
-    // let legalAgeToDrink = 21;
-
-    let outputMessage = "";
-
-    if (person.age < legalAge) {
-      console.log("He cant drink");
-      outputMessage = "He is Retarted";
-    } else {
-      console.log("You can drink motherfucker");
-      outputMessage = "He is disabled";
-    }
-
-    setOutput(outputMessage);
-  };
-
-  useEffect(() => {
-    checkIfHeCanDrink(age, kiko);
-    calcAge(1993);
-  }, []);
-
-  // console.log("DATA AFTER CLICKING THE BUTTON :", joke);
-  // function exampleFunction() {
-  //   console.log(arguments[0]);
-  // }
-  //
-  // exampleFunction("Hello", "Worlds");
-  //
-  // const arrowFunction = (...args) => {
-  //   console.log(args[0]);
-  // };
-  //
-  // arrowFunction("FUCK", "YOU");
-
-  function calcAge(birthYear) {
-    console.log(firstName);
-  }
-
-  const firstName = "Kristijan";
 
   return (
     <>
@@ -80,6 +42,11 @@ const ChuckNorrisJoke = () => {
 
         <View style={styles.phraseContainer}>
           <Text style={styles.jokeText}>{joke.value}</Text>
+        </View>
+        <View>
+          {/*<CallbackFunctions />*/}
+          {/*<FunctionReturningFunction />*/}
+          <ClosureInFunctions />
         </View>
       </View>
     </>
