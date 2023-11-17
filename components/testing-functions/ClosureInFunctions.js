@@ -42,6 +42,20 @@ const ClosureInFunctions = () => {
   h();
   f();
 
+  function outer(x) {
+    return function inner(y) {
+      console.log(x + y);
+      // return x + y;
+    };
+
+    // return inner;
+  }
+
+  const outerReturn = outer(10);
+
+  outerReturn(3);
+  outerReturn(26);
+
   return (
     <View>
       <Text>Closure in Functions</Text>

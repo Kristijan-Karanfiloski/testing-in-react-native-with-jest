@@ -3,6 +3,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
 import Login from "./components/login/Login";
 import ChuckNorrisJoke from "./components/chuckNorrisJoke/ChuckNorrisJoke";
+import Testing1Child from "./components/testing1/Testing1Child";
+import Testing1Parent from "./components/testing1/Testing1Parent";
+import Arrays from "./components/testing-functions/Arrays";
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +67,8 @@ export default function App() {
       {/*</NavigationContainer>*/}
       <SafeAreaView style={styles.wrapper}>
         <ChuckNorrisJoke />
+        {/*<Testing1Parent />*/}
+        <Arrays />
       </SafeAreaView>
       {/*<RegisterForm />*/}
       {/*<Home />*/}

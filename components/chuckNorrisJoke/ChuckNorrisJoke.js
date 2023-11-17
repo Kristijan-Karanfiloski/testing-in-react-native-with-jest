@@ -13,11 +13,12 @@ export const fetchJoke = async () => {
 
     return data;
   } catch (e) {
+    //OVOJ RETURN SO UNDEFINED TREBA DA E IST  SO MOCK SO PRAVAM VO TEST AKO NAPRAVI RETURN NULL TESTOT KE NAPRAI FAIL
     return undefined;
   }
 };
 
-const ChuckNorrisJoke = () => {
+const ChuckNorrisJoke = ({ onItemPress }) => {
   const [joke, setJoke] = useState("");
 
   // console.log("DATA BEFORE CLICKING THE BUTTON :", joke);
