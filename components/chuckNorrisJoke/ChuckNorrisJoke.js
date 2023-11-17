@@ -1,8 +1,6 @@
 import { Image, View, StyleSheet, Pressable, Text } from "react-native";
 import ChuckPng from "../../assets/chucknorris_logo_coloured_small.png";
 import { useState } from "react";
-import CallbackFunctions from "../testing-functions/CallbackFunctions";
-import FunctionReturningFunction from "../testing-functions/FunctionReturningFunction";
 import ClosureInFunctions from "../testing-functions/ClosureInFunctions";
 
 export const fetchJoke = async () => {
@@ -74,7 +72,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 5,
     borderRadius: 7,
-    cursor: "pointer",
   },
   phraseContainer: {
     marginTop: 15,
