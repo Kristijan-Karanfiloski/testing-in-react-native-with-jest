@@ -1,12 +1,8 @@
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
-import Login from "./components/login/Login";
 import ChuckNorrisJoke from "./components/chuckNorrisJoke/ChuckNorrisJoke";
-import Testing1Child from "./components/testing1/Testing1Child";
-import Testing1Parent from "./components/testing1/Testing1Parent";
-import Arrays from "./components/testing-functions/Arrays";
-import Currency from "./components/currencyConverter/Currency";
+import DelectusAutAutemFetch from "./components/delectusAutAutemFetch/DelectusAutAutemFetch";
 
 const Stack = createNativeStackNavigator();
 
@@ -68,9 +64,7 @@ export default function App() {
       {/*</NavigationContainer>*/}
       <SafeAreaView style={styles.wrapper}>
         <ChuckNorrisJoke />
-        {/*<Testing1Parent />*/}
-        <Arrays />
-        <Currency />
+        <DelectusAutAutemFetch />
       </SafeAreaView>
       {/*<RegisterForm />*/}
       {/*<Home />*/}

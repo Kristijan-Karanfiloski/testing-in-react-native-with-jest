@@ -42,9 +42,9 @@ const ChuckNorrisJoke = ({ onItemPress }) => {
         <View style={styles.phraseContainer}>
           <Text style={styles.jokeText}>{joke.value}</Text>
         </View>
-        <View>
-          <ClosureInFunctions />
-        </View>
+        {/*<View>*/}
+        {/*  <ClosureInFunctions />*/}
+        {/*</View>*/}
       </View>
     </>
   );

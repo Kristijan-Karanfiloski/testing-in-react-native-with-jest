@@ -9,6 +9,8 @@ describe("run callback", () => {
     expect(callbackMock).toHaveBeenCalled();
     expect(callbackMock).toBeCalledWith(95);
   });
+  // MOCK FUNCTIONS SHOULD BE CLEARED AFTER USING between test because they will keep the previous test history
+
   afterEach(() => {
     jest.clearAllMocks();
   });
