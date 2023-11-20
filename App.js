@@ -6,6 +6,7 @@ import ChuckNorrisJoke from "./components/chuckNorrisJoke/ChuckNorrisJoke";
 import Testing1Child from "./components/testing1/Testing1Child";
 import Testing1Parent from "./components/testing1/Testing1Parent";
 import Arrays from "./components/testing-functions/Arrays";
+import Currency from "./components/currencyConverter/Currency";
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +70,7 @@ export default function App() {
         <ChuckNorrisJoke />
         {/*<Testing1Parent />*/}
         <Arrays />
+        <Currency />
       </SafeAreaView>
       {/*<RegisterForm />*/}
       {/*<Home />*/}
