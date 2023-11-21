@@ -2,8 +2,8 @@
 
 exports[`Snapshot Testing should check the matchers and fail 1`] = `
 {
-  "createdAt": 2023-11-15T14:03:08.489Z,
-  "id": 15,
+  "createdAt": 2023-11-21T11:10:46.843Z,
+  "id": 19,
   "name": "LeBron James",
 }
 `;

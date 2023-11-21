@@ -1,76 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1698745951837" clover="3.2.0">
-  <project timestamp="1698745951837" name="All files">
-    <metrics statements="44" coveredstatements="13" conditionals="6" coveredconditionals="0" methods="13" coveredmethods="3" elements="63" coveredelements="16" complexity="0" loc="44" ncloc="44" packages="4" files="5" classes="5"/>
-    <package name="TestingProject">
-      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="App.js" path="C:\Users\Asus\Desktop\TestingProject\App.js">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+<coverage generated="1700564726671" clover="3.2.0">
+  <project timestamp="1700564726671" name="All files">
+    <metrics statements="43" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="3" elements="55" coveredelements="19" complexity="0" loc="43" ncloc="43" packages="3" files="3" classes="3"/>
+    <package name="assets">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="chucknorris_logo_coloured_small.png" path="/Users/v.kristijan.petrovski/Desktop/testing-in-react-native-with-jest/assets/chucknorris_logo_coloured_small.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="TestingProject.components">
-      <metrics statements="31" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="9" coveredmethods="1"/>
-      <file name="AddTodo.js" path="C:\Users\Asus\Desktop\TestingProject\components\AddTodo.js">
-        <metrics statements="27" coveredstatements="2" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="81" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="87" count="0" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
-        <line num="110" count="0" type="stmt"/>
-        <line num="111" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="112" count="0" type="stmt"/>
-        <line num="113" count="0" type="stmt"/>
-        <line num="116" count="0" type="stmt"/>
-        <line num="124" count="0" type="stmt"/>
-        <line num="125" count="0" type="stmt"/>
-        <line num="129" count="0" type="stmt"/>
-        <line num="156" count="0" type="stmt"/>
-        <line num="167" count="0" type="stmt"/>
-        <line num="183" count="1" type="stmt"/>
-      </file>
-      <file name="Appointment.js" path="C:\Users\Asus\Desktop\TestingProject\components\Appointment.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="TestingProject.components.downloadOnTheAppStoreButton">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="DownloadOnTheAppStoreButton.js" path="C:\Users\Asus\Desktop\TestingProject\components\downloadOnTheAppStoreButton\DownloadOnTheAppStoreButton.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
+    <package name="components.chuckNorrisJoke">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="ChuckNorrisJoke.js" path="/Users/v.kristijan.petrovski/Desktop/testing-in-react-native-with-jest/components/chuckNorrisJoke/ChuckNorrisJoke.js">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="TestingProject.components.helperFunctions">
-      <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="testingFunctions.js" path="C:\Users\Asus\Desktop\TestingProject\components\helperFunctions\testingFunctions.js">
-        <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="15" count="1" type="stmt"/>
+    <package name="components.testing-functions">
+      <metrics statements="28" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
+      <file name="ClosureInFunctions.js" path="/Users/v.kristijan.petrovski/Desktop/testing-in-react-native-with-jest/components/testing-functions/ClosureInFunctions.js">
+        <metrics statements="28" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
       </file>
     </package>
   </project>
