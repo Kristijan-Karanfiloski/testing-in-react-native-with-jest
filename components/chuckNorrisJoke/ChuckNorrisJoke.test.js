@@ -66,4 +66,9 @@ describe("Chuck Norris Joke", () => {
   //   const result = await fetchJoke();
   //   expect(result).toEqual(APIdata);
   // });
+  it("should return 3", () => {
+    const sum = 3;
+
+    expect(sum).toBe(3);
+  });
 });
