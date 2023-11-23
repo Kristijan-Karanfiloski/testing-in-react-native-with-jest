@@ -55,6 +55,23 @@ const result = number1 + number2;
 
 console.log(result);
 
+function greet() {
+  console.log("Greetings");
+}
+
+greet.language = "english";
+
+console.log(greet());
+console.log(greet.language);
+
+function log(a) {
+  a();
+}
+// FIRST CLASS FUNCTIONS WITH FUNCTION EXPRESSION
+log(() => {
+  console.log("Hello FROM LINE 72 im INVOKED");
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////
 
 const ChuckNorrisJoke = ({ onItemPress }) => {
