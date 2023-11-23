@@ -3,6 +3,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
 import ChuckNorrisJoke from "./components/chuckNorrisJoke/ChuckNorrisJoke";
 import DelectusAutAutemFetch from "./components/delectusAutAutemFetch/DelectusAutAutemFetch";
+import ValueVsReference from "./components/by-value-and-by-reference/ValueVsReference";
+import ArrayCollectionOfAnything from "./components/arrays-collection-of-anything/ArrayCollectionOfAnything";
+import ArgumentsAndSpread from "./components/arguments-spread/ArgumentsAndSpread";
+import Modal from "./components/modal/ModalTesting";
+import ModalTesting from "./components/modal/ModalTesting";
+import PracticeCssInNative from "./components/tryingout-css-native/PracticeCssInNative";
 
 const Stack = createNativeStackNavigator();
 
@@ -55,10 +61,13 @@ export default function App() {
       {/*    </Stack.Navigator>*/}
       {/*  )}*/}
       {/*</NavigationContainer>*/}
-      <SafeAreaView style={styles.wrapper}>
-        <ChuckNorrisJoke />
-        <DelectusAutAutemFetch />
-      </SafeAreaView>
+      {/*<SafeAreaView style={styles.wrapper}>*/}
+      {/*  /!*<ChuckNorrisJoke />*!/*/}
+      {/*  /!*<ModalTesting />*!/*/}
+      {/*</SafeAreaView>*/}
+      {/*<View style={styles.wrapper}>*/}
+      {/*</View>*/}
+      <PracticeCssInNative />
       {/*<RegisterForm />*/}
       {/*<Home />*/}
     </>
@@ -67,7 +76,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
+    // flex: 1,
     borderWidth: 4,
     // borderColor: "blue",
     // justifyContent: "center",
