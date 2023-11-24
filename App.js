@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
 import PracticeCssInNative from "./components/tryingout-css-native/PracticeCssInNative";
 import ReviewsApp from "./components/reviews-app/ReviewsApp";
+import 'react-native-gesture-handler';
 
 const Stack = createNativeStackNavigator();
 

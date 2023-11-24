@@ -24,6 +24,7 @@ describe("Chuck Norris Joke", () => {
   beforeEach(() => {
     fetch.mockClear();
   });
+  
 
   it("should returns undefined from the catch block in the exported fetchJoke ", async () => {
     fetch.mockImplementationOnce(() => Promise.reject("Api is down"));

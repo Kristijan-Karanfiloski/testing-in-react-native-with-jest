@@ -1,10 +1,13 @@
-import React from "react";
 import Home from "../../screens/home";
+import Navigator from '../../routes/homeStack'
+import { NavigationContainer } from "@react-navigation/native";
+
 
 const ReviewsApp = () => {
   return (
     <>
-      <Home />
+  <NavigationContainer></NavigationContainer>
+     
     </>
   );
 };
