@@ -1,14 +1,8 @@
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
-import ChuckNorrisJoke from "./components/chuckNorrisJoke/ChuckNorrisJoke";
-import DelectusAutAutemFetch from "./components/delectusAutAutemFetch/DelectusAutAutemFetch";
-import ValueVsReference from "./components/by-value-and-by-reference/ValueVsReference";
-import ArrayCollectionOfAnything from "./components/arrays-collection-of-anything/ArrayCollectionOfAnything";
-import ArgumentsAndSpread from "./components/arguments-spread/ArgumentsAndSpread";
-import Modal from "./components/modal/ModalTesting";
-import ModalTesting from "./components/modal/ModalTesting";
 import PracticeCssInNative from "./components/tryingout-css-native/PracticeCssInNative";
+import ReviewsApp from "./components/reviews-app/ReviewsApp";
 
 const Stack = createNativeStackNavigator();
 
@@ -67,7 +61,7 @@ export default function App() {
       {/*</SafeAreaView>*/}
       {/*<View style={styles.wrapper}>*/}
       {/*</View>*/}
-      <PracticeCssInNative />
+      <ReviewsApp />
       {/*<RegisterForm />*/}
       {/*<Home />*/}
     </>
