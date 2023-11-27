@@ -14,4 +14,17 @@ describe("User profile -rendering", () => {
 
     expect(screen.getByText("Verified : Email Verified")).toBeTruthy();
   });
+
+  it("should not have text email is verified when isEmailVerifeid is false", () => {
+    render(
+      <UserProfile
+        displayName="Kiko the developer"
+        username="kikaccc"
+        email="kiko.kiko@gmail.con"
+        isEmailVerified={false}
+      />,
+    );
+    expect(screen.queryByText("Verified : Email Verified")).not.toBeTruthy();
+    expect(screen.getByText("Verified : Email not Verified")).toBeTruthy();
+  });
 });

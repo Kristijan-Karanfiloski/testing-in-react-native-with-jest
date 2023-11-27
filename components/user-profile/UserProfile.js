@@ -8,7 +8,12 @@ export const UserProfile = ({
 }) => (
   <SafeAreaView>
     <View>
-      <Text>Display Name: {displayName}</Text>
+      <Text>
+        Display Name:{" "}
+        {displayName.length > 30
+          ? displayName.slice(0, 28).concat("...")
+          : displayName}
+      </Text>
     </View>
     <View>
       <Text>Username: {username}</Text>
