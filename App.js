@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
 import PracticeCssInNative from "./components/tryingout-css-native/PracticeCssInNative";
 import ReviewsApp from "./components/reviews-app/ReviewsApp";
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
+import { UserProfile } from "./components/user-profile/UserProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -63,6 +64,7 @@ export default function App() {
       {/*<View style={styles.wrapper}>*/}
       {/*</View>*/}
       <ReviewsApp />
+      <UserProfile />
       {/*<RegisterForm />*/}
       {/*<Home />*/}
     </>
